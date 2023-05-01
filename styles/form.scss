@@ -1,0 +1,213 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: $mainColor;
+  }
+
+  .error {
+    padding: 1rem;
+    background-color: rgb(33, 33, 33);
+    border-radius: 0.5rem;
+    color: red;
+    text-align: center;
+    width: 100%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.3rem;
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      // color: cyan;
+      color: $mainColor;
+    }
+  }
+
+  .label-input {
+    input {
+      width: 30rem;
+    }
+  }
+
+  .checkbox {
+    // border: 2px solid green;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  .generate-password {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgb(0, 149, 255);
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 3px white;
+    border-radius: 5px;
+    text-shadow: 0px 0px 1px black;
+  }
+
+  .select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    .select-input {
+      position: relative;
+
+      .select-btn {
+        width: 15rem;
+        font-size: 1rem;
+        text-align: center;
+        padding: 0.2rem 0;
+      }
+
+      .select-options {
+        display: flex;
+
+        transform: scaleY(0);
+        flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        background-color: rgb(3, 106, 185);
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.4s ease-in-out;
+        transform-origin: top;
+
+        .option {
+          // padding: 7px 20px;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          // border-radius: 28px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          text-shadow: 0px 0px 1px black;
+          background-color: transparent;
+          padding: 0.5rem 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.418);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.485);
+          z-index: 10;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+
+  .drag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    // border: 0.2rem dashed $mainColor;
+    border: 0.2rem dashed rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.681);
+    font-size: 1.5rem;
+    font-family: "Tilt Neon", cursive;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .drag.active {
+    border: 0.2rem dashed $mainColor;
+  }
+
+  .progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    .perc {
+      font-size: 2rem;
+      font-family: "Tilt Neon", cursive;
+      font-weight: bold;
+      color: rgb(0, 213, 255);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 1rem;
+      background-color: rgb(0, 123, 255);
+      border-radius: 0.5rem;
+    }
+  }
+
+  button[type="submit"],
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+}
+
+.msg {
+  font-size: 1.5rem;
+  font-family: "Tilt Neon", cursive;
+  // font-weight: bold;
+  text-align: center;
+  // color: rgb(0, 213, 255);
+
+  a {
+    color: $mainColor;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.form-full {
+  width: 33rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 5rem auto;
+}
+
+// 600px
+@media (max-width: 600px) {
+  .form {
+    // width: 80%;
+    .label-input {
+      input {
+        width: 100%;
+      }
+    }
+  }
+}

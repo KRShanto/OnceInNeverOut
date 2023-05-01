@@ -1,0 +1,37 @@
+{
+  "name": "once-in-never-out",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.15.12",
+    "@types/react": "18.0.37",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "firebase": "^9.20.0",
+    "framer-motion": "^10.12.4",
+    "generate-password": "^1.7.0",
+    "next": "13.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.8.0",
+    "react-spinners": "^0.13.8",
+    "react-top-loading-bar": "^2.3.1",
+    "sass": "^1.62.0",
+    "shortid": "^2.2.16",
+    "typescript": "5.0.4",
+    "uuid": "^9.0.0",
+    "zustand": "^4.3.7"
+  },
+  "devDependencies": {
+    "@types/shortid": "^0.0.29",
+    "@types/uuid": "^9.0.1"
+  }
+}

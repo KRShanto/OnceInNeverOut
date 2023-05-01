@@ -1,0 +1,17 @@
+export const quotes: string[] = [
+  "Step into a realm where memories are eternal, and your digital footprint never fades away",
+  "What you share is yours no more. Enter if you dare, to see what's in store",
+  "Abandon all hope, ye who enter here. Your photos and videos shall never disappear",
+  "Your memories are here to thrive, once you upload, they'll never leave",
+  "Once in Never Out, a place of no doubt, your media stays forever, no way out",
+  "Your photos and videos, now a permanent fixture. Welcome to Once in Never Out, the digital picture",
+  "Welcome to a site like no other, where uploads become eternal, and memories never smother",
+  "Say goodbye to control, and surrender your media to our hole. Once in Never Out, where nothing is parole",
+  "Enter if you dare, but your photos and videos, beware. In Once in Never Out, they're here to stay, forever and a day",
+  "Once you share, there's no turning back, your media stays in Once in Never Out's shack",
+  "Your files will never escape, their fate is sealed once they're on this digital landscape",
+  "In Once in Never Out, your media shall remain, a digital monument, that will forever sustain",
+  "Welcome to a world where what's uploaded, remains enshrined, your digital legacy, forever intertwined",
+  "Step inside this digital vault, your media now under our control. Once in Never Out, a place with no parole",
+  "Abandon your media to our care, in Once in Never Out, it's here to share. A digital museum, forever rare",
+];
