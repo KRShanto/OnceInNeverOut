@@ -17,28 +17,25 @@ export default function File({ label, setValue, className }: InputProps) {
   };
 
   return (
-    <div className={`form-wrapper drag ${file ? "active" : ""} ${className}`}>
-      <Dropzone onDrop={onDrop}>
-        {({ getRootProps, getInputProps }) => (
-          <section>
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              {file ? (
-                <div className="file-info">
-                  <p className="file-name">{file.name}</p>
-                  <p className="file-size">
-                    {Math.round(file.size / 1000000)} MB
-                  </p>
-                </div>
-              ) : (
-                <p>
-                  Drag {label} here, or click to select {label}
-                </p>
-              )}
+    <Dropzone onDrop={onDrop}>
+      {({ getRootProps, getInputProps }) => (
+        <div
+          {...getRootProps()}
+          className={`drag ${file ? "active" : ""} ${className}`}
+        >
+          <input {...getInputProps()} />
+          {file ? (
+            <div className="file-info">
+              <p className="file-name">{file.name}</p>
+              <p className="file-size">{Math.round(file.size / 1000000)} MB</p>
             </div>
-          </section>
-        )}
-      </Dropzone>
-    </div>
+          ) : (
+            <p>
+              Drag {label} here, or click to select {label}
+            </p>
+          )}
+        </div>
+      )}
+    </Dropzone>
   );
 }
