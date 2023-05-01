@@ -1,0 +1,51 @@
+$green: $mainColor;
+$skyblue: rgb(0, 170, 255);
+
+.btn {
+  padding: 7px 30px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0px 0px 1px black;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.green {
+  color: $green;
+  border: 1px solid $green;
+  box-shadow: 0 0 3px $green;
+
+  &:hover,
+  &:focus {
+    background-color: $green;
+    color: white;
+  }
+}
+
+.skyblue {
+  color: $skyblue;
+  border: 1px solid $skyblue;
+  box-shadow: 0 0 3px $skyblue;
+
+  &:hover,
+  &:focus {
+    background-color: $skyblue;
+    color: white;
+  }
+}
+
+.main {
+  color: $mainColor;
+  border: 1px solid $mainColor;
+  box-shadow: 0 0 3px $mainColor;
+
+  &:hover,
+  &:focus {
+    background-color: $mainColor;
+    color: white;
+  }
+}

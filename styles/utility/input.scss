@@ -1,0 +1,15 @@
+.input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.2rem;
+  //   width: 40rem;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.439);
+  color: rgba(255, 255, 255, 0.878);
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    border: 2px solid $mainColor;
+  }
+}
