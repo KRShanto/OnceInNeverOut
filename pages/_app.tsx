@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0);
@@ -19,8 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const { setUser } = useAuthStore((state) => state);
 
   useEffect(() => {
+    turnOn();
     auth.onAuthStateChanged((user: any) => {
       if (user) {
+        turnOff();
         setUser({
           uid: user.uid,
           email: user.email || "",
@@ -75,6 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <main>
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </main>
     </>
   );
