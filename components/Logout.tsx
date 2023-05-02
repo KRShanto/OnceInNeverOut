@@ -23,12 +23,8 @@ export default function Logout() {
           Yes
         </button>
 
-        <Link
-          className="option cancel
-        "
-          href={prev || "/"}
-        >
-          No
+        <Link className="option cancel" href={prev || "/"}>
+          Back
         </Link>
       </div>
     </div>

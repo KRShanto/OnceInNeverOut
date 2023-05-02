@@ -61,6 +61,15 @@ export default function About() {
             site is open source and you can find the source code on github. Give
             me a star if you like it. You can find the links below.
           </p>
+
+          <p>
+            <i>
+              <b>
+                Very very thanks for visiting my site. I hope you will enjoy it.
+                You can also consider hiring me for your next project.
+              </b>
+            </i>
+          </p>
         </div>
       </div>
 

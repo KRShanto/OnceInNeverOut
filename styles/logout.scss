@@ -39,3 +39,18 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .logout {
+    .title {
+      font-size: 1.4rem;
+    }
+
+    .options {
+      .option {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+  }
+}

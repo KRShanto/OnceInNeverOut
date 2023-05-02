@@ -64,7 +64,7 @@ function ShowPicture({ media }: { media: Media }) {
       <div className="picture section">
         <h3 className="title">{media.title}</h3>
 
-        <Image src={media.url} alt={media.title} width={550} height={550} />
+        <Image src={media.url} alt={media.title} width={450} height={400} />
       </div>
     </>
   );
