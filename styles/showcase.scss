@@ -1,0 +1,23 @@
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(255, 0, 89);
+  text-shadow: 0 0 20px rgba(255, 0, 89, 0.5);
+}
+
+.section {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .title {
+    font-family: "Tilt Neon", sans-serif;
+    font-size: 3rem;
+    color: $white;
+  }
+}

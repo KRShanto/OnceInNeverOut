@@ -82,13 +82,13 @@ function DisplayMedia() {
           <div className="media" key={i}>
             <div className="title-icons">
               {pictureExt.includes(m.type) && (
-                <BsFillImageFill className="icon" />
+                <BsFillImageFill className="icon pic" />
               )}
               {videoExt.includes(m.type) && (
-                <BsFillCameraVideoFill className="icon" />
+                <BsFillCameraVideoFill className="icon vid" />
               )}
               {audioExt.includes(m.type) && (
-                <BsFillMusicPlayerFill className="icon" />
+                <BsFillMusicPlayerFill className="icon aud" />
               )}
               <h3 className="title">{m.title}</h3>
             </div>

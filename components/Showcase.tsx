@@ -7,6 +7,9 @@ import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 import useLoadingStore from "@/stores/loading";
 import Image from "next/image";
 
+// human don't know icon
+// import { AiOutlineFileUnknown } from "react-icons/ai";
+
 export default function Showcase() {
   const router = useRouter();
   const { id } = router.query;
@@ -34,7 +37,7 @@ export default function Showcase() {
     if (id) getMedia();
   }, [id]);
 
-  if (notFound) return <div>Media not found</div>;
+  if (notFound) return <div className="not-found">Media not found 🤷‍♂️</div>;
 
   if (media && pictureExt.includes(media.type)) {
     return <ShowPicture media={media} />;
@@ -53,7 +56,7 @@ function ShowPicture({ media }: { media: Media }) {
       <div className="picture section">
         <h3 className="title">{media.title}</h3>
 
-        <Image src={media.url} alt={media.title} width={500} height={500} />
+        <Image src={media.url} alt={media.title} width={550} height={550} />
       </div>
     </>
   );
