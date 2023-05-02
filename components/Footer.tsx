@@ -13,15 +13,15 @@ export default function Footer() {
   return (
     <footer>
       <Link href="/about">
-        <FiInfo className="info" />
+        <FiInfo className="info icon" title="About site" />
       </Link>
 
       <Link href="/create">
-        <IoMdAddCircleOutline className="create" />
+        <IoMdAddCircleOutline className="create icon" title="Upload file" />
       </Link>
 
       <Link href={`/logout?prev=${path}`}>
-        <FaRunning className="logout" />
+        <FaRunning className="logout icon" title="Logout" />
       </Link>
     </footer>
   );

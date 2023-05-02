@@ -28,6 +28,14 @@ body {
   height: 100vh;
 }
 
+main {
+  position: absolute;
+  width: 100%;
+  top: 5rem;
+  bottom: 5rem;
+  overflow-y: scroll;
+}
+
 .preloader {
   position: fixed;
   width: 100vw;
@@ -71,6 +79,9 @@ body {
 
 @import "form";
 @import "create";
+@import "home";
+@import "navbar";
+@import "footer";
 
 @import "utility/input.scss";
 @import "utility/button.scss";

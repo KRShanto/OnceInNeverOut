@@ -75,11 +75,11 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       )}
 
+      <Navbar />
       <main>
-        <Navbar />
         <Component {...pageProps} />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
