@@ -6,7 +6,7 @@ import Media from "@/types/media";
 import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 import useLoadingStore from "@/stores/loading";
 import Image from "next/image";
-
+import Head from "next/head";
 // human don't know icon
 // import { AiOutlineFileUnknown } from "react-icons/ai";
 
@@ -53,6 +53,14 @@ export default function Showcase() {
 function ShowPicture({ media }: { media: Media }) {
   return (
     <>
+      <Head>
+        <title>{media.title}</title>
+        <meta property="og:image" content={media.url} />
+        <meta property="og:image:width" content="550" />
+        <meta property="og:image:height" content="550" />
+        <meta property="og:title" content={media.title} />
+      </Head>
+
       <div className="picture section">
         <h3 className="title">{media.title}</h3>
 
@@ -65,6 +73,14 @@ function ShowPicture({ media }: { media: Media }) {
 function ShowVideo({ media }: { media: Media }) {
   return (
     <>
+      <Head>
+        <title>{media.title}</title>
+        <meta property="og:title" content={media.title} />
+        <meta property="og:video" content={media.url} />
+        <meta property="og:video:width" content="550" />
+        <meta property="og:video:height" content="550" />
+      </Head>
+
       <div className="video section">
         <h3 className="title">{media.title}</h3>
 
@@ -79,6 +95,12 @@ function ShowVideo({ media }: { media: Media }) {
 function ShowAudio({ media }: { media: Media }) {
   return (
     <>
+      <Head>
+        <title>{media.title}</title>
+        <meta property="og:title" content={media.title} />
+        <meta property="og:audio" content={media.url} />
+      </Head>
+
       <div className="audio section">
         <h3 className="title">{media.title}</h3>
 
