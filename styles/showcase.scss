@@ -20,4 +20,29 @@
     font-size: 3rem;
     color: $white;
   }
+
+  video {
+    width: 45rem;
+    border-radius: 10px;
+    box-shadow: 0 0 1px white;
+  }
+
+  audio {
+    margin-top: 5rem;
+    width: 45rem;
+    border-radius: 10px;
+    box-shadow: 0 0 1px white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    video {
+      width: 90%;
+    }
+
+    audio {
+      width: 90%;
+    }
+  }
 }
