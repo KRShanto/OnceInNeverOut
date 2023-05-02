@@ -27,7 +27,7 @@
     margin: 15px 0;
 
     label {
-      font-size: 16px;
+      font-size: 1.3rem;
       font-weight: bold;
       margin-bottom: 5px;
       // color: cyan;
@@ -178,9 +178,7 @@
 .msg {
   font-size: 1.5rem;
   font-family: "Tilt Neon", cursive;
-  // font-weight: bold;
   text-align: center;
-  // color: rgb(0, 213, 255);
 
   a {
     color: $mainColor;
@@ -191,7 +189,6 @@
 
 .form-full {
   width: 33rem;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -200,14 +197,31 @@
   margin: 5rem auto;
 }
 
-// 600px
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .form {
-    // width: 80%;
     .label-input {
       input {
         width: 100%;
       }
     }
+
+    .drag {
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
+
+    .msg {
+      font-size: 1rem;
+    }
+  }
+
+  .form-full {
+    width: 90%;
+  }
+}
+
+@media screen and (max-height: 850px) {
+  .form-full {
+    margin: 2rem auto;
   }
 }

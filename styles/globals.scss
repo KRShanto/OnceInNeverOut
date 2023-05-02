@@ -31,8 +31,8 @@ body {
 main {
   position: absolute;
   width: 100%;
-  top: 5rem;
-  bottom: 5rem;
+  top: $navfooterHeight;
+  bottom: $navfooterHeight;
   overflow-y: scroll;
 }
 
@@ -87,3 +87,10 @@ main {
 
 @import "utility/input.scss";
 @import "utility/button.scss";
+
+@media screen and (max-width: 768px) {
+  main {
+    top: calc(#{$navfooterHeight} - 1rem);
+    bottom: calc(#{$navfooterHeight} - 1rem);
+  }
+}

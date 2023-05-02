@@ -1,15 +1,17 @@
 nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.318);
-  padding: 0.5rem;
   display: flex;
   justify-content: center;
   background-color: $navfooterColor;
   position: fixed;
   width: 100%;
   z-index: 999;
-  height: 5rem;
+  height: $navfooterHeight;
 
   .logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-block;
     background: linear-gradient(90deg, #008df8, #131fff, #aa2bff, #ff2b79);
     background-clip: text;
@@ -19,5 +21,15 @@ nav {
     -moz-text-fill-color: transparent;
     font-size: 3rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: calc(#{$navfooterHeight} - 1rem);
+
+    .logo {
+      font-size: 2.3rem;
+    }
   }
 }

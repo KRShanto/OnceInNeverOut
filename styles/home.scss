@@ -1,10 +1,13 @@
 .intro {
-  padding: 10rem 2rem;
+  // padding: 10rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
-  gap: 10rem;
+  // gap: 10rem;
+  // border: 1px solid green;
+  height: 100%;
+  // position: relative;
 
   .quote {
     font-size: 2.5rem;
@@ -21,6 +24,8 @@
   .btn {
     font-size: 2rem;
     padding: 1rem 2rem;
+    position: absolute;
+    bottom: 20%;
   }
 }
 
@@ -84,6 +89,48 @@
         border: none;
         outline: none;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    padding: 5rem 2rem;
+    gap: 5rem;
+
+    .quote {
+      font-size: 2rem;
+    }
+
+    .btn {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .media-section {
+    padding: 1rem 0;
+
+    .media {
+      padding: 0.5rem;
+      width: 90%;
+      font-size: 1rem;
+
+      .title-icons {
+        gap: 1rem;
+
+        .icon {
+          font-size: 1.5rem;
+        }
+      }
+
+      .options {
+        gap: 1rem;
+
+        .option {
+          font-size: 1rem;
+        }
       }
     }
   }
