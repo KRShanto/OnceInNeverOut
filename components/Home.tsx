@@ -21,6 +21,8 @@ export default function Home() {
   } else if (user === null) {
     return <Intro />;
   }
+
+  return <></>;
 }
 
 function Intro() {
