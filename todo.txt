@@ -1,0 +1,2 @@
+Show a checkmark after copying the link
+
