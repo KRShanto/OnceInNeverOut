@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form, { SendType } from "@/components/utils/form/Form";
 import Input from "@/components/utils/form/Input";
 import { auth } from "@/lib/firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useLoadingStore from "@/stores/loading";

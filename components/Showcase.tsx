@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { getDoc, doc } from "firebase/firestore";
-import { db, storage } from "@/lib/firebase";
+import { db } from "@/lib/firebase";
 import Media from "@/types/media";
 import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 import useLoadingStore from "@/stores/loading";
 import Image from "next/image";
 import Head from "next/head";
-// human don't know icon
-// import { AiOutlineFileUnknown } from "react-icons/ai";
 
 export default function Showcase() {
   const router = useRouter();

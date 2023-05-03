@@ -1,5 +1,4 @@
 import React from "react";
-import useAuthStore from "@/stores/auth";
 import { FaRunning } from "react-icons/fa";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { FiInfo } from "react-icons/fi";

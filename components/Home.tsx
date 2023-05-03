@@ -6,13 +6,13 @@ import Media from "@/types/media";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
+import useLoadingStore from "@/stores/loading";
 
 import { BsFillImageFill } from "react-icons/bs";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { BsClipboard } from "react-icons/bs";
-import useLoadingStore from "@/stores/loading";
 
 export default function Home() {
   const { user } = useAuthStore((state) => state);

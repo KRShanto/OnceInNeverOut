@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { setDoc, doc, getFirestore } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { getAuth } from "firebase/auth";
 import { db, storage } from "@/lib/firebase";
 import useAuthStore from "@/stores/auth";
-import useLoadingStore from "@/stores/loading";
 import shortid from "shortid";
 import Media from "@/types/media";
 import Form, { SendType } from "./utils/form/Form";
@@ -13,7 +11,6 @@ import Input from "./utils/form/Input";
 import File from "./utils/form/File";
 import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 
-// import this icon: <i class="fa-solid fa-skull-crossbones"></i>
 import { FaSkullCrossbones } from "react-icons/fa";
 import NotLoggedInMessage from "./utils/NotLoggedInMessage";
 
@@ -42,8 +39,6 @@ function CreateForm() {
   const allowedTypes = [...pictureExt, ...videoExt, ...audioExt];
 
   const handleSubmit = async (send: SendType) => {
-    console.log("File type: ", file?.type);
-
     if (user === null || user === "loading") {
       throw new Error(
         "User is not logged in but tried to create a media! This should not happen!"
@@ -61,7 +56,6 @@ function CreateForm() {
     }
 
     setError("");
-
     setUploadIsOn(true);
 
     // TODO: find a better way to do this
