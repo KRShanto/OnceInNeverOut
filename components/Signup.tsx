@@ -5,6 +5,7 @@ import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import useLoadingStore from "@/stores/loading";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,7 @@ export default function Signup() {
   const [error, setError] = useState("");
 
   const router = useRouter();
+  const { turnOn, turnOff } = useLoadingStore();
 
   async function submitHandler(send: SendType) {
     if (email === "" || password === "") {
@@ -21,9 +23,12 @@ export default function Signup() {
 
     try {
       setError("");
+      turnOn();
+
       // Create account
       await createUserWithEmailAndPassword(auth, email, password);
 
+      turnOff();
       // redirect home
       router.push("/");
     } catch (error: any) {

@@ -12,6 +12,7 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { BsClipboard } from "react-icons/bs";
+import useLoadingStore from "@/stores/loading";
 
 export default function Home() {
   const { user } = useAuthStore((state) => state);
@@ -56,6 +57,7 @@ function Intro() {
 function DisplayMedia() {
   const [media, setMedia] = useState<Media[]>([]);
   const { user } = useAuthStore((state) => state);
+  const { turnOn, turnOff } = useLoadingStore();
 
   useEffect(() => {
     // Get the media from firestore where userId is equal to the current user's uid
@@ -65,6 +67,9 @@ function DisplayMedia() {
           "User is not logged in but tried to get media! This should not happen!"
         );
       }
+
+      turnOn();
+
       const q = query(collection(db, "media"), where("userId", "==", user.uid));
 
       const querySnapshot = await getDocs(q);
@@ -72,6 +77,8 @@ function DisplayMedia() {
       querySnapshot.forEach((doc) => {
         setMedia((prev) => [...prev, doc.data() as Media]);
       });
+
+      turnOff();
     }
 
     getMedia();
