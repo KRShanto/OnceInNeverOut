@@ -18,7 +18,7 @@ export default function About() {
             At Once in Never Out, you can upload your photos, videos, and audio
             files to share with the world. Your content will be displayed on our
             platform for everyone to see, but your personal information will
-            always remain private.
+            always remain private (e.g. your name, email, etc.)
           </p>
 
           <p>
@@ -31,9 +31,8 @@ export default function About() {
           </p>
 
           <p>
-            Please use this site responsibly and have fun sharing your content
-            with others! Note that we (the developers) won&apos;t be responsible
-            for any harm that may result from the content you upload.
+            Note that we (the developers) won&apos;t be responsible for any harm
+            that may result from the content you upload.
           </p>
 
           <p>
@@ -48,8 +47,9 @@ export default function About() {
           </p>
         </div>
 
+        <hr />
+
         <div className="developer">
-          <hr />
           <p>
             Actually this is a hobby project of mine. So don&apos;t worry about
             the text above. If you have uploaded something you don&apos;t want
