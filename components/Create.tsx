@@ -35,7 +35,7 @@ function CreateForm() {
   const router = useRouter();
   const { user } = useAuthStore();
 
-  const allowedTypes = ["image", "video", "audio"].map((type) => `${type}/*`);
+  const allowedTypes = ["image", "video", "audio"];
 
   const handleSubmit = async (send: SendType) => {
     if (user === null || user === "loading") {
@@ -49,8 +49,10 @@ function CreateForm() {
       return;
     }
 
-    if (file && !allowedTypes.includes(file.type)) {
-      setError("Please select a valid file type");
+    console.log("File type: ", file.type);
+
+    if (!allowedTypes.includes(file.type.split("/")[0])) {
+      setError("Only image, video and audio files are supported");
       return;
     }
 
