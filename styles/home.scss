@@ -29,6 +29,27 @@
   }
 }
 
+.no-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+
+  .heading {
+    font-size: 3rem;
+    font-family: "Tilt Neon", sans-serif;
+    color: rgb(255, 157, 0);
+  }
+
+  .text {
+    color: $white;
+    font-size: 1.8rem;
+    font-family: "Josefin Sans", sans-serif;
+  }
+}
+
 .media-section {
   display: flex;
   flex-direction: column;

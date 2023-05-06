@@ -57,6 +57,7 @@ function DisplayMedia() {
   const [media, setMedia] = useState<Media[]>([]);
   const { user } = useAuthStore((state) => state);
   const { turnOn, turnOff } = useLoadingStore();
+  const [noMedia, setNoMedia] = useState(false);
 
   useEffect(() => {
     // Get the media from firestore where userId is equal to the current user's uid
@@ -73,10 +74,13 @@ function DisplayMedia() {
 
       const querySnapshot = await getDocs(q);
 
-      querySnapshot.forEach((doc) => {
-        setMedia((prev) => [...prev, doc.data() as Media]);
-      });
-
+      if (querySnapshot.empty) {
+        setNoMedia(true);
+      } else {
+        querySnapshot.forEach((doc) => {
+          setMedia((prev) => [...prev, doc.data() as Media]);
+        });
+      }
       turnOff();
     }
 
@@ -86,41 +90,50 @@ function DisplayMedia() {
   return (
     <>
       <div className="media-section">
-        {media.map((m, i) => (
-          <div className="media" key={i}>
-            <div className="title-icons">
-              {m.type.includes("image") && (
-                <BsFillImageFill className="icon pic" />
-              )}
-
-              {m.type.includes("video") && (
-                <BsFillCameraVideoFill className="icon vid" />
-              )}
-
-              {m.type.includes("audio") && (
-                <BsFillMusicPlayerFill className="icon aud" />
-              )}
-              <h3 className="title">{m.title}</h3>
-            </div>
-
-            <div className="options">
-              <Link href={`/${m.id}`} className="option" target="_blank">
-                <BsBoxArrowUpRight className="icon" />
-              </Link>
-
-              <button
-                className="option"
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `${window.location.origin}/${m.id}`
-                  );
-                }}
-              >
-                <BsClipboard className="icon" />
-              </button>
-            </div>
+        {noMedia ? (
+          <div className="no-media">
+            <h2 className="heading">No media found!</h2>
+            <p className="text">
+              You can upload media by clicking the plus button in the bottom.
+            </p>
           </div>
-        ))}
+        ) : (
+          media.map((m, i) => (
+            <div className="media" key={i}>
+              <div className="title-icons">
+                {m.type.includes("image") && (
+                  <BsFillImageFill className="icon pic" />
+                )}
+
+                {m.type.includes("video") && (
+                  <BsFillCameraVideoFill className="icon vid" />
+                )}
+
+                {m.type.includes("audio") && (
+                  <BsFillMusicPlayerFill className="icon aud" />
+                )}
+                <h3 className="title">{m.title}</h3>
+              </div>
+
+              <div className="options">
+                <Link href={`/${m.id}`} className="option" target="_blank">
+                  <BsBoxArrowUpRight className="icon" />
+                </Link>
+
+                <button
+                  className="option"
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `${window.location.origin}/${m.id}`
+                    );
+                  }}
+                >
+                  <BsClipboard className="icon" />
+                </button>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </>
   );
