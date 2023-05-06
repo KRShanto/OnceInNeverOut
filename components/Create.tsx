@@ -9,7 +9,6 @@ import Media from "@/types/media";
 import Form, { SendType } from "./utils/form/Form";
 import Input from "./utils/form/Input";
 import File from "./utils/form/File";
-import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 
 import { FaSkullCrossbones } from "react-icons/fa";
 import NotLoggedInMessage from "./utils/NotLoggedInMessage";
@@ -36,7 +35,7 @@ function CreateForm() {
   const router = useRouter();
   const { user } = useAuthStore();
 
-  const allowedTypes = [...pictureExt, ...videoExt, ...audioExt];
+  const allowedTypes = ["image", "video", "audio"].map((type) => `${type}/*`);
 
   const handleSubmit = async (send: SendType) => {
     if (user === null || user === "loading") {

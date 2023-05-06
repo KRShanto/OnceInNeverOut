@@ -5,7 +5,6 @@ import { quotes } from "@/lib/quotes";
 import Media from "@/types/media";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 import useLoadingStore from "@/stores/loading";
 
 import { BsFillImageFill } from "react-icons/bs";
@@ -90,13 +89,15 @@ function DisplayMedia() {
         {media.map((m, i) => (
           <div className="media" key={i}>
             <div className="title-icons">
-              {pictureExt.includes(m.type) && (
+              {m.type.includes("image") && (
                 <BsFillImageFill className="icon pic" />
               )}
-              {videoExt.includes(m.type) && (
+
+              {m.type.includes("video") && (
                 <BsFillCameraVideoFill className="icon vid" />
               )}
-              {audioExt.includes(m.type) && (
+
+              {m.type.includes("audio") && (
                 <BsFillMusicPlayerFill className="icon aud" />
               )}
               <h3 className="title">{m.title}</h3>

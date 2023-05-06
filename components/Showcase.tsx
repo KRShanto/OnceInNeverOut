@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import Media from "@/types/media";
-import { pictureExt, videoExt, audioExt } from "@/lib/mediaExt";
 import useLoadingStore from "@/stores/loading";
 import Image from "next/image";
 import Head from "next/head";
@@ -37,12 +36,18 @@ export default function Showcase() {
 
   if (notFound) return <div className="not-found">Media not found 🤷‍♂️</div>;
 
-  if (media && pictureExt.includes(media.type)) {
-    return <ShowPicture media={media} />;
-  } else if (media && videoExt.includes(media.type)) {
-    return <ShowVideo media={media} />;
-  } else if (media && audioExt.includes(media.type)) {
-    return <ShowAudio media={media} />;
+  if (media) {
+    if (media.type.includes("image")) {
+      return <ShowPicture media={media} />;
+    }
+
+    if (media.type.includes("video")) {
+      return <ShowVideo media={media} />;
+    }
+
+    if (media.type.includes("audio")) {
+      return <ShowAudio media={media} />;
+    }
   }
 
   return <></>;
